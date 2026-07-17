@@ -231,26 +231,58 @@ nav a:hover {
 
 .tech {
   position: relative;
-  padding: 80px 20px;
+  padding: 64px 20px 88px;
   text-align: center;
-  background: #1a1a1a;
+  background: linear-gradient(180deg, #861b1c 0%, #a92123 50%, #d52225 100%);
 }
 
 .tech h2 {
-  font-size: 53.33px;
+  font-size: 68px;
   color: var(--off-white);
   font-weight: 400;
-  line-height: 74px;
-  margin-bottom: 48px;
+  line-height: 1.1;
+  margin-bottom: 0;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-.tech-info p {
-  font-size: 26.67px;
-  color: var(--white);
-  line-height: 37px;
-  max-width: 731px;
-  margin: 0 auto 24px;
+.tech-note {
+  max-width: 900px;
+  margin: 0 auto 42px;
+  color: rgba(245, 245, 245, 0.65);
+  font-size: 19px;
+  line-height: 1.45;
   font-weight: 400;
+}
+
+.tech-list {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.tech-list div {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.tech-list dt,
+.tech-list dd {
+  color: var(--off-white);
+  font-size: 29px;
+  line-height: 1.35;
+  font-weight: 400;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.tech-list dt {
+  flex: 0 0 auto;
+}
+
+.tech-list dd {
+  margin: 0;
+  text-align: left;
 }
 
 /* ── Lineup Section ── */
@@ -511,9 +543,34 @@ footer a {
   }
 
   .tech h2 {
-    font-size: 34px;
-    line-height: 48px;
+    font-size: 38px;
+    line-height: 1.15;
     overflow-wrap: anywhere;
+  }
+
+  .tech-note {
+    margin-top: 12px;
+    font-size: 14px;
+  }
+
+  .tech-note br {
+    display: none;
+  }
+
+  .tech-list div {
+    display: block;
+    margin-bottom: 28px;
+  }
+
+  .tech-list dt,
+  .tech-list dd {
+    font-size: 19px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .tech-list dt {
+    margin-bottom: 4px;
   }
 
   .about p,
