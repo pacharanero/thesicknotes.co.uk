@@ -171,6 +171,58 @@ nav a:hover {
   font-size: 26.67px;
 }
 
+/* ── Gigs Section ── */
+
+.gigs {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  background: #0d0d0d;
+}
+
+.gigs h2 {
+  font-size: 53.33px;
+  color: var(--off-white);
+  font-weight: 400;
+  line-height: 74px;
+  margin-bottom: 48px;
+}
+
+.gigs p {
+  font-size: 26.67px;
+  color: var(--white);
+  line-height: 37px;
+  max-width: 731px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* ── Tech Section ── */
+
+.tech {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  background: #1a1a1a;
+}
+
+.tech h2 {
+  font-size: 53.33px;
+  color: var(--off-white);
+  font-weight: 400;
+  line-height: 74px;
+  margin-bottom: 48px;
+}
+
+.tech-info p {
+  font-size: 26.67px;
+  color: var(--white);
+  line-height: 37px;
+  max-width: 731px;
+  margin: 0 auto 24px;
+  font-weight: 400;
+}
+
 /* ── Lineup Section ── */
 
 .lineup {
