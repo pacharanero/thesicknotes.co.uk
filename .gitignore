@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Temporary files from scraping
+tmp/
+*.json
+.playwright-mcp/
+canva-full-page.png
+local-screenshot.png
+rendered-html.json
+computed-styles.json
+font-face-rules.json
+nav-bg-imgs.json
+all-text.json
+full-text-content.json
+section-texts.json
+material-section.json
+section-styles.json
+contact-gallery-styles.json
+all-visible-text.json
+material-visible.json
+full-material.json
+section-bg-images.json
+social-links.json
+contact-styles.json
+lineup-and-bg.json
+page-bg.json
+below-3800.json

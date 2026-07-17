@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#
+# Serve the static site locally for development.
+# Uses python3's built-in HTTP server.
+#
+# Usage: s/up [port]    (default port 8000)
+
+set -euo pipefail
+
+PORT="${1:-8000}"
+
+exec python3 -m http.server "$PORT"
