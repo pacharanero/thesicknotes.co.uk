@@ -17,6 +17,7 @@ tmp/
 .playwright-mcp/
 canva-full-page.png
 local-screenshot.png
+lineup-check*.png
 rendered-html.json
 computed-styles.json
 font-face-rules.json
