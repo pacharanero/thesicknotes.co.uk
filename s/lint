@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# SPDX-FileCopyrightText: 2026 Dr Marcus Baw and Baw Medical Ltd
+# SPDX-License-Identifier: AGPL-3.0-or-later
+#
+# Check that the static site has no broken local asset references.
+
+set -euo pipefail
+
+cd "$(git rev-parse --show-toplevel)"
+
+python3 - <<'PY'
+from html.parser import HTMLParser
+from pathlib import Path
+import re
+import subprocess
+import sys
+
+
+class AssetReferences(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.references = []
+
+    def handle_starttag(self, tag, attrs):
+        for name, value in attrs:
+            if name in {"href", "src"} and value:
+                self.references.append(value)
+
+
+root = Path.cwd()
+errors = []
+parser = AssetReferences()
+parser.feed((root / "index.html").read_text(encoding="utf-8"))
+
+for reference in parser.references:
+    if reference.startswith(("#", "http:", "https:", "mailto:", "tel:")):
+        continue
+    if not (root / reference).is_file():
+        errors.append(f"Missing HTML asset: {reference}")
+
+for stylesheet in (root / "styles.css", root / "assets/fonts/fonts.css"):
+    for reference in re.findall(r'url\(["\']?([^"\')]+)', stylesheet.read_text(encoding="utf-8")):
+        if not reference.startswith(("http:", "https:")) and not (stylesheet.parent / reference).is_file():
+            errors.append(f"Missing CSS asset: {reference}")
+
+if (root / "CNAME").read_text(encoding="utf-8").strip() != "thesicknotes.co.uk":
+    errors.append("CNAME must contain thesicknotes.co.uk")
+
+if subprocess.run(["git", "diff", "--check"], check=False).returncode:
+    errors.append("git diff --check reported whitespace errors")
+
+if errors:
+    print("\n".join(errors), file=sys.stderr)
+    raise SystemExit(1)
+
+print("Static-site lint passed.")
+PY

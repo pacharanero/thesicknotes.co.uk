@@ -1,0 +1,21 @@
+version = 1
+
+[[annotations]]
+path = [".editorconfig", ".gitignore", ".nojekyll", "CNAME", "REUSE.toml", ".github/dependabot.yml"]
+SPDX-FileCopyrightText = "2026 Dr Marcus Baw and Baw Medical Ltd"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+[[annotations]]
+path = ["README.md", "agent-instructions.md", "AGENTS.md", "SECURITY.md"]
+SPDX-FileCopyrightText = "2026 Dr Marcus Baw and Baw Medical Ltd"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+
+[[annotations]]
+path = ["assets/media/**"]
+SPDX-FileCopyrightText = "The Sicknotes and respective copyright owners"
+SPDX-License-Identifier = "LicenseRef-Proprietary-Assets"
+
+[[annotations]]
+path = ["assets/fonts/HighCruiser.woff"]
+SPDX-FileCopyrightText = "TypeFairy"
+SPDX-License-Identifier = "LicenseRef-High-Cruiser-Canva"

@@ -1,3 +1,6 @@
+/* SPDX-FileCopyrightText: 2026 Dr Marcus Baw and Baw Medical Ltd */
+/* SPDX-License-Identifier: AGPL-3.0-or-later */
+
 @import url("assets/fonts/fonts.css");
 
 :root {
@@ -353,6 +356,24 @@ nav a:hover {
   text-align: right;
 }
 
+.lineup-member--patrick figcaption,
+.lineup-member--louise figcaption {
+  top: auto;
+  bottom: 24px;
+  width: fit-content;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+}
+
+.lineup-member--patrick figcaption {
+  right: auto;
+}
+
+.lineup-member--louise figcaption {
+  left: auto;
+}
+
 .lineup-member .name {
   font-size: 36px;
   color: var(--white);
@@ -636,6 +657,21 @@ footer a {
     top: 12px;
     left: 12px;
     right: 12px;
+  }
+
+  .lineup-member--patrick figcaption,
+  .lineup-member--louise figcaption {
+    top: auto;
+    bottom: 12px;
+    padding: 8px 10px;
+  }
+
+  .lineup-member--patrick figcaption {
+    right: auto;
+  }
+
+  .lineup-member--louise figcaption {
+    left: auto;
   }
 
   .material-columns {

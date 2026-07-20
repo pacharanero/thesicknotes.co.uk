@@ -1,12 +1,47 @@
 #!/usr/bin/env bash
+# SPDX-FileCopyrightText: 2026 Dr Marcus Baw and Baw Medical Ltd
+# SPDX-License-Identifier: AGPL-3.0-or-later
 #
 # Serve the static site locally for development.
-# Uses python3's built-in HTTP server.
+# Uses python3's built-in HTTP server on the first free port in a range of 31.
 #
-# Usage: s/up [port]    (default port 8000)
+# Usage: s/up [start-port] [http.server arguments]    (default start port 8000)
 
 set -euo pipefail
 
-PORT="${1:-8000}"
+cd "$(git rev-parse --show-toplevel)"
 
-exec python3 -m http.server "$PORT"
+if ! command -v python3 >/dev/null 2>&1; then
+  printf 'python3 is required. Install Python 3, then run s/up again.\n' >&2
+  exit 1
+fi
+
+START_PORT="${1:-8000}"
+if ! [[ "$START_PORT" =~ ^[0-9]+$ ]] || (( START_PORT < 1 || START_PORT > 65535 )); then
+  printf 'Start port must be an integer from 1 to 65535.\n' >&2
+  exit 1
+fi
+shift $(( $# > 0 ? 1 : 0 ))
+
+port_is_free() {
+  local port="$1"
+
+  if command -v ss >/dev/null 2>&1; then
+    [[ -z "$(ss -ltnH "sport = :$port")" ]]
+  elif command -v lsof >/dev/null 2>&1; then
+    ! lsof -nP -iTCP:"$port" -sTCP:LISTEN >/dev/null 2>&1
+  else
+    printf 'Neither ss nor lsof is available to detect a free port. Install one and retry.\n' >&2
+    exit 1
+  fi
+}
+
+for (( port = START_PORT; port <= START_PORT + 30 && port <= 65535; port++ )); do
+  if port_is_free "$port"; then
+    printf 'Serving http://localhost:%s\n' "$port"
+    exec python3 -m http.server "$port" --bind 127.0.0.1 "$@"
+  fi
+done
+
+printf 'No free port found between %s and %s.\n' "$START_PORT" "$(( START_PORT + 30 ))" >&2
+exit 1
