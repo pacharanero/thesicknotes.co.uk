@@ -1,0 +1,262 @@
+<!-- SPDX-FileCopyrightText: 2026 Dr Marcus Baw and Baw Medical Ltd -->
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sicknotes - Technical Rider</title>
+    <link rel="icon" href="assets/media/sicknotes-logo.png" type="image/png">
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <style>
+        :root {
+            color: #231f20;
+            background: #f7f2e9;
+            font-family: Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 32px;
+        }
+
+        main {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #fffdf8;
+            border-top: 14px solid #a72022;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid #c7b8a5;
+        }
+
+        header img {
+            width: 150px;
+            height: auto;
+        }
+
+        h1,
+        h2 {
+            margin: 0;
+            color: #a72022;
+            font-family: "High Cruiser", Impact, sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+        }
+
+        h1 {
+            font-size: 44px;
+        }
+
+        h2 {
+            margin-top: 28px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            margin: 4px 0 0;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        p,
+        li,
+        dd {
+            font-size: 16px;
+            line-height: 1.45;
+        }
+
+        .intro {
+            margin: 24px 0 0;
+            font-size: 18px;
+        }
+
+        dl {
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 12px 24px;
+            margin: 18px 0 0;
+        }
+
+        dt {
+            color: #a72022;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+        }
+
+        dd {
+            margin: 0;
+        }
+
+        ul {
+            margin: 14px 0 0;
+            padding-left: 22px;
+        }
+
+        footer {
+            margin-top: 34px;
+            padding-top: 20px;
+            border-top: 1px solid #c7b8a5;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        a {
+            color: #8f1719;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 0;
+            }
+
+            main {
+                padding: 28px 22px;
+            }
+
+            header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            dl {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            dd {
+                margin-bottom: 12px;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 12mm;
+            }
+
+            body {
+                padding: 0;
+                background: #fff;
+            }
+
+            main {
+                max-width: none;
+                padding: 16px 22px;
+                border-top-width: 8px;
+            }
+
+            header {
+                gap: 16px;
+                padding-bottom: 14px;
+            }
+
+            header img {
+                width: 105px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            h2 {
+                margin-top: 16px;
+                font-size: 23px;
+            }
+
+            .subtitle,
+            dt {
+                font-size: 11px;
+            }
+
+            .intro,
+            p,
+            li,
+            dd {
+                font-size: 13px;
+                line-height: 1.28;
+            }
+
+            .intro {
+                margin-top: 14px;
+            }
+
+            dl {
+                grid-template-columns: 155px 1fr;
+                gap: 6px 16px;
+                margin-top: 10px;
+            }
+
+            footer {
+                margin-top: 18px;
+                padding-top: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <img src="assets/media/sicknotes-logo.png" alt="The Sicknotes logo">
+            <div>
+                <h1>Technical Rider</h1>
+                <p class="subtitle">THE SICKNOTES - FOUR-PIECE VINTAGE ROCK'N'ROLL AND SWING</p>
+            </div>
+        </header>
+
+        <p class="intro">The Sicknotes are a four-piece band from York. We can provide a self-contained system for smaller events or work with a venue-supplied PA and house engineer for larger shows. Please advance any venue-specific requirements with us before the event.</p>
+
+        <h2>Self-Contained Shows</h2>
+        <dl>
+            <dt>PA AND CONTROL</dt>
+            <dd>Behringer XR18 digital mixer, compact PA with line-array speakers and sub-bases, floor monitoring, microphones, cabling and basic lighting.</dd>
+            <dt>WHEN TO USE</dt>
+            <dd>Suitable for smaller venues, private parties, beer festivals and similar events where a venue PA is not supplied.</dd>
+            <dt>SETUP</dt>
+            <dd>Please allow two to three hours for load-in, setup and sound check. Allow additional time where multiple acts also need sound checking.</dd>
+        </dl>
+
+        <h2>Venue-Supplied PA</h2>
+        <dl>
+            <dt>VOCALS</dt>
+            <dd>Three vocal microphones, SM58 or Beta 58 equivalent, with appropriate stands.</dd>
+            <dt>INSTRUMENTS</dt>
+            <dd>Two mic'd guitar amps, e609 equivalent preferred; double bass DI; kick drum and overhead drum coverage.</dd>
+            <dt>MONITORING</dt>
+            <dd>Three monitor positions: two across the front line and one for the drummer. We can use our own wireless IEM system by advance agreement.</dd>
+            <dt>SOUNDCHECK</dt>
+            <dd>Please allow one hour with a supplied PA and house engineer.</dd>
+        </dl>
+
+        <h2>Venue Requirements</h2>
+        <dl>
+            <dt>POWER</dt>
+            <dd>At least two independent 240V / 13A sockets, accessible from the performance area.</dd>
+            <dt>ACCESS</dt>
+            <dd>Close load-in and parking are strongly preferred. Please tell us about stairs, restricted access or distance from parking during advance.</dd>
+            <dt>STAGE</dt>
+            <dd>We agree the stage plan and space requirement case by case to suit the venue, event format and whether our PA is in use.</dd>
+            <dt>COMPLIANCE</dt>
+            <dd>A current PAT inventory is available on request. Please raise any venue-specific compliance requirements at booking.</dd>
+        </dl>
+
+        <footer>
+            <p><strong>Booking and technical contact:</strong> Marcus Baw | <a href="tel:07747600617">07747 600617</a> | <a href="mailto:info@thesicknotes.co.uk">info@thesicknotes.co.uk</a></p>
+        </footer>
+    </main>
+</body>
+</html>

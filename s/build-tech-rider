@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# SPDX-FileCopyrightText: 2026 Dr Marcus Baw and Baw Medical Ltd
+# SPDX-License-Identifier: AGPL-3.0-or-later
+#
+# Build the downloadable technical-rider PDF from the printable HTML source.
+# Chromium is required. Run this after changing technical-rider.html.
+
+set -euo pipefail
+
+cd "$(git rev-parse --show-toplevel)"
+
+if ! command -v chromium >/dev/null 2>&1; then
+  printf 'Chromium is required. Install it, then run s/build-tech-rider again.\n' >&2
+  exit 1
+fi
+
+mkdir -p assets/downloads
+
+exec chromium --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="assets/downloads/the-sicknotes-technical-rider.pdf" "file://$PWD/technical-rider.html"
